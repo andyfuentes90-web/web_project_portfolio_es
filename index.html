@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portafolio Profesional de Desarrollo Web Full Stack"
+    />
+    <title>Portafolio Profesional</title>
+
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Hojas de Estilos -->
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <!-- ==========================================
+       HEADER / NAVEGACIÓN
+       ========================================== -->
+    <header class="header">
+      <div class="container header__container">
+        <a href="#hero" class="header__logo">
+          <span class="header__logo-text">&lt;DevPortfolio /&gt;</span>
+        </a>
+
+        <nav class="nav" id="nav-menu" aria-label="Navegación principal">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#about" class="nav__link">Sobre mí</a>
+            </li>
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">Habilidades</a>
+            </li>
+            <li class="nav__item">
+              <a href="#projects" class="nav__link">Proyectos</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link nav__link--cta">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Botón Menú Mobile -->
+        <button
+          class="header__toggle"
+          id="nav-toggle"
+          aria-label="Abrir menú de navegación"
+          aria-expanded="false"
+        >
+          <span class="header__toggle-bar"></span>
+          <span class="header__toggle-bar"></span>
+          <span class="header__toggle-bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ==========================================
+       CONTENIDO PRINCIPAL
+       ========================================== -->
+    <main class="main">
+      <!-- HERO SECTION -->
+      <section class="hero" id="hero">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <span class="hero__badge">Desarrollador Web Full Stack</span>
+            <h1 class="hero__title">
+              Construyo experiencias digitales escalables y de alto impacto
+            </h1>
+            <p class="hero__description">
+              Especializado en maquetación semántica, desarrollo frontend
+              reactivo e integración de arquitectura backend limpia.
+            </p>
+            <div class="hero__actions">
+              <a href="#projects" class="btn btn--primary">Ver Proyectos</a>
+              <a href="#contact" class="btn btn--secondary">Contáctame</a>
+            </div>
+          </div>
+          <div class="hero__media">
+            <img
+              src="./assets/images/avatar.webp"
+              alt="Fotografía profesional del desarrollador"
+              class="hero__image"
+              width="400"
+              height="400"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- SOBRE MÍ / ABOUT -->
+      <section class="about section" id="about">
+        <div class="container">
+          <h2 class="section__title">Sobre mí</h2>
+          <p class="section__subtitle">
+            Conoce más sobre mi trayectoria y enfoque de desarrollo
+          </p>
+
+          <div class="about__content">
+            <p class="about__text">
+              Desarrollador apasionado por crear código limpio, mantenible y
+              accesible. Me enfoco en resolver problemas complejos mediante
+              interfaces intuitivas y arquitecturas frontend eficientes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HABILIDADES / SKILLS -->
+      <section class="skills section" id="skills">
+        <div class="container">
+          <h2 class="section__title">Habilidades Técnicas</h2>
+          <p class="section__subtitle">
+            Tecnologías y herramientas que utilizo a diario
+          </p>
+
+          <ul class="skills__grid">
+            <li class="skill-card">
+              <img
+                src="./assets/icons/html5.svg"
+                alt=""
+                class="skill-card__icon"
+                width="40"
+                height="40"
+                aria-hidden="true"
+              />
+              <h3 class="skill-card__name">HTML5 / BEM</h3>
+            </li>
+            <li class="skill-card">
+              <img
+                src="./assets/icons/css3.svg"
+                alt=""
+                class="skill-card__icon"
+                width="40"
+                height="40"
+                aria-hidden="true"
+              />
+              <h3 class="skill-card__name">CSS3 / Grid / Flexbox</h3>
+            </li>
+            <li class="skill-card">
+              <img
+                src="./assets/icons/javascript.svg"
+                alt=""
+                class="skill-card__icon"
+                width="40"
+                height="40"
+                aria-hidden="true"
+              />
+              <h3 class="skill-card__name">JavaScript (ES6+)</h3>
+            </li>
+            <li class="skill-card">
+              <img
+                src="./assets/icons/git.svg"
+                alt=""
+                class="skill-card__icon"
+                width="40"
+                height="40"
+                aria-hidden="true"
+              />
+              <h3 class="skill-card__name">Git / GitHub</h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PROYECTOS / PORTAFOLIO -->
+      <section class="projects section" id="projects">
+        <div class="container">
+          <h2 class="section__title">Proyectos Destacados</h2>
+          <p class="section__subtitle">
+            Una muestra de mis trabajos más recientes
+          </p>
+
+          <div class="projects__grid">
+            <!-- Card de Proyecto 1 -->
+            <article class="project-card">
+              <div class="project-card__media">
+                <img
+                  src="./assets/images/project-1.webp"
+                  alt="Captura de pantalla de la aplicación de portafolio"
+                  class="project-card__image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__content">
+                <div class="project-card__tags">
+                  <span class="tag">HTML5</span>
+                  <span class="tag">CSS3</span>
+                  <span class="tag">JS</span>
+                </div>
+                <h3 class="project-card__title">Landing Page de Portafolio</h3>
+                <p class="project-card__description">
+                  Diseño responsivo maquetado desde Figma aplicando arquitectura
+                  BEM y CSS modular sin dependencias externas.
+                </p>
+                <div class="project-card__links">
+                  <a
+                    href="#"
+                    class="btn btn--small btn--primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Demo Live</a
+                  >
+                  <a
+                    href="#"
+                    class="btn btn--small btn--secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Código</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORMULARIO DE CONTACTO -->
+      <section class="contact section" id="contact">
+        <div class="container">
+          <h2 class="section__title">Contacto</h2>
+          <p class="section__subtitle">
+            ¿Tienes un proyecto en mente? Hablemos.
+          </p>
+
+          <form class="contact__form form" id="contact-form" novalidate>
+            <div class="form__group">
+              <label for="name" class="form__label">Nombre completo</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form__input"
+                placeholder="Ej. Juan Pérez"
+                required
+              />
+              <span class="form__error" id="name-error"></span>
+            </div>
+
+            <div class="form__group">
+              <label for="email" class="form__label">Correo electrónico</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form__input"
+                placeholder="tu@email.com"
+                required
+              />
+              <span class="form__error" id="email-error"></span>
+            </div>
+
+            <div class="form__group">
+              <label for="message" class="form__label">Mensaje</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form__input form__input--textarea"
+                rows="5"
+                placeholder="Escribe tu mensaje aquí..."
+                required
+              ></textarea>
+              <span class="form__error" id="message-error"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full">
+              Enviar Mensaje
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================
+       FOOTER
+       ========================================== -->
+    <footer class="footer">
+      <div class="container footer__container">
+        <p class="footer__copy">
+          &copy; 2026 Desarrollador Web. Todos los derechos reservados.
+        </p>
+
+        <ul class="footer__socials">
+          <li>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Perfil de GitHub"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Perfil de LinkedIn"
+              >LinkedIn</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
