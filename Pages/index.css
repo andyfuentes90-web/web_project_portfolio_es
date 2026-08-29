@@ -1,0 +1,29 @@
+/* 1. Fuentes */
+@font-face {
+  font-family: "Open Sans";
+  src:
+    url("../assets/fonts/OpenSans-Regular.woff2") format("woff2"),
+    url("../assets/fonts/OpenSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Archivo Black";
+  src:
+    url("../assets/fonts/ArchivoBlack-Regular.woff2") format("woff2"),
+    url("../assets/fonts/ArchivoBlack-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* 2. Reset / Vendor */
+@import url("../vendor/normalize.css");
+
+/* 3. Bloques BEM */
+@import url("../blocks/page.css");
+@import url("../blocks/header.css");
+@import url("../blocks/profile.css");
+@import url("../blocks/projects.css");
+@import url("../blocks/project-card.css");
+@import url("../blocks/footer.css");

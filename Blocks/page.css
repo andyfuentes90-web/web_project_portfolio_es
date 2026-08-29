@@ -1,0 +1,38 @@
+/* Variables globales para colores y tipografía */
+:root {
+  --accent-color: #6d6dff; /* Cambia a #00FF7B o #FF0051 si deseas personalizar */
+  --bg-color: #0a0a0c;
+  --text-main: #ffffff;
+  --text-muted: #a0a0aa;
+  --font-title: "Archivo Black", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+}
+
+.page {
+  background-color: var(--bg-color);
+  /* Degradados radiales ajustados desde el centro (50%) */
+  background-image:
+    radial-gradient(
+      circle at calc(50% - 450px) 250px,
+      rgba(109, 109, 255, 0.15),
+      transparent 450px
+    ),
+    radial-gradient(
+      circle at calc(50% + 450px) 750px,
+      rgba(109, 109, 255, 0.1),
+      transparent 450px
+    );
+  background-repeat: no-repeat;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Envoltorio principal para limitar ancho a 1440px y centrar */
+.content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}

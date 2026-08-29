@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 80px;
+}
+
+.header__logo {
+  height: 32px;
+  width: auto;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav-link {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.5; /* Regla de valor numérico decimal */
+  transition: color 0.3s ease;
+}
+
+.header__nav-link:hover {
+  color: var(--accent-color);
+}
