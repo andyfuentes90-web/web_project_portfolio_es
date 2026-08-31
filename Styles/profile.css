@@ -71,6 +71,7 @@
 
 .profile__link:hover {
   background-size: 100% 4px;
+  color: var(--accent-color);
 }
 
 .profile__button {
@@ -81,9 +82,15 @@
   text-decoration: none;
   font-weight: 600;
   line-height: 1.5;
+  display: inline-block;
   transition: opacity 0.3s ease;
+  trnsform:
+    0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .profile__button:hover {
   opacity: 0.85;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(109, 109, 255, 0.35);
 }
