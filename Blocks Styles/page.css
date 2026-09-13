@@ -13,8 +13,7 @@
 }
 
 .page {
-  background-color: var(--bg-color);
-  /* Degradados radiales ajustados desde el centro (50%) */
+  background-color: var(--bg-color, #0a0a0c);
   background-image:
     radial-gradient(
       circle at calc(50% - 450px) 250px,

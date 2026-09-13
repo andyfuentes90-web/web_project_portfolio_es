@@ -28,11 +28,12 @@ CSS .footer {
 }
 
 .footer__social-link {
-  color: var(--text-main);
+  color: var(--text-muted);
   text-decoration: none;
   font-size: 14px;
   line-height: 1.5;
-  transition: color 0.3s ease;
+  display:inline-block;
+  transition: color 0.3s ease;transform 0.3s ease;
 }
 
 .footer__social-link:hover {
