@@ -1,29 +1,209 @@
-/* 1. Fuentes */
-@font-face {
-  font-family: "Open Sans";
-  src:
-    url("../assets/fonts/OpenSans-Regular.woff2") format("woff2"),
-    url("../assets/fonts/OpenSans-Regular.woff") format("woff");
-  font-weight: 400;
-  font-display: swap;
-}
+/* 1. FUENTES */
 
+/* Archivo Black - Regular */
 @font-face {
   font-family: "Archivo Black";
   src:
-    url("../assets/fonts/ArchivoBlack-Regular.woff2") format("woff2"),
-    url("../assets/fonts/ArchivoBlack-Regular.woff") format("woff");
+    url("./files/fonts/ArchivoBlack-Regular.woff2") format("woff2"),
+    url("./files/fonts/ArchivoBlack-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
   font-display: swap;
 }
 
-/* 2. Reset / Vendor */
-@import url("../vendor/normalize.css");
+/* Open Sans - Light (300) */
+@font-face {
+  font-family: "Open Sans";
+  src:
+    url("./files/fonts/OpenSans-Light.woff2") format("woff2"),
+    url("./fonts/OpenSans-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
-/* 3. Bloques BEM */
-@import url("../blocks/page.css");
-@import url("../blocks/header.css");
-@import url("../blocks/profile.css");
-@import url("../blocks/projects.css");
-@import url("../blocks/project-card.css");
-@import url("../blocks/footer.css");
+/* Open Sans - Regular (400) */
+@font-face {
+  font-family: "Open Sans";
+  src:
+    url("./files/fonts/OpenSans-Regular.woff2") format("woff2"),
+    url("./files/fonts/OpenSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Open Sans - SemiBold (600) */
+@font-face {
+  font-family: "Open Sans";
+  src:
+    url("./files/fonts/OpenSans-SemiBold.woff2") format("woff2"),
+    url("./fonts/OpenSans-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. VARIABLES GLOBALES */
+::root {
+  /* Paleta de Colores */
+  --color-bg-main: #000000;
+  --color-bg-secondary: #0b0c10;
+  --color-text-main: #ffffff;
+  --color-text-secondary: #a0a0a0;
+  --color-accent: #6d6dff;
+  --color-accent-hover: #5858e6;
+  --color-card-bg: #121318;
+  --color-border: #22252e;
+
+  /* Tipografías */
+  --font-family-headings: "Archivo Black", sans-serif;
+  --font-family-body: "Open Sans", sans-serif;
+
+  /* Pesos de fuente */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+
+  /* Dimensiones y Layout */
+  --container-max-width: 1440px;
+  --container-padding-desktop: 0 80px;
+  --container-padding-tablet: 0 40px;
+  --container-padding-mobile: 0 20px;
+
+  /* Transiciones */
+  --transition-default: all 0.3s ease;
+}
+
+/* 3. RESETEO BASE Y CONFIGURACIÓN GLOBAL */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg-main);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: 16px;
+  line-height: 1.5; /* Valor decimal sin unidad */
+  color: var(--color-text-main);
+  background-color: var(--color-bg-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Previene scroll horizontal */
+}
+
+/* Encabezados */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-family-headings);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-main);
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+}
+
+/* Enlaces y listas */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-default);
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Imágenes responsivas por defecto */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Inputs y Botones */
+button,
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* 4. ESTRUCTURA Y CONTENEDOR PRINCIPAL BEM (.page) */
+
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page__content {
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding: var(--container-padding-desktop);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.content {
+  flex: 1; /* Empuja el footer al fondo si hay poco contenido */
+}
+
+/* 5. AJUSTES RESPONSIVOS BASE (BREAKPOINTS)*/
+
+/* Tablet (hasta 1023px) */
+@media (max-width: 1023px) {
+  .page__content {
+    padding: var(--container-padding-tablet);
+  }
+}
+
+/* Móvil (hasta 767px) */
+@media (max-width: 767px) {
+  .page__content {
+    padding: var(--container-padding-mobile);
+  }
+}
+
+/* 6. RESET / Vendor */
+@import url("./Vendor/normalize.css");
+
+/* 7. Bloques BEM */
+@import url("./Blocks\ Styles/header.css");
+@import url("./Blocks\ Styles/profile.css");
+@import url("./Blocks\ Styles/projects.css");
+@import url("./Blocks\ Styles/contacts.css");
+@import url("./Blocks\ Styles/footer.css");
+@import url("./Blocks\ Styles/hero.css");
