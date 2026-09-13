@@ -1,96 +1,219 @@
 .profile {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 60px;
-  padding: 60px 0 100px;
+  gap: 40px;
+  padding: 80px 0;
+  width: 100%;
 }
 
-/* Foto fija en pixeles para escritorio (según brief) */
-.profile__avatar {
-  width: 320px;
-  height: 320px;
-  border-radius: 16px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.profile__info {
+.profile__content {
+  max-width: 620px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
+/* Columna de Texto / Información */
+.profile__info {
+  flex: 1;
+  max-width: 680px;
+}
+
 .profile__title {
-  font-family: var(--font-title);
-  font-size: 48px;
-  line-height: 1.15;
-  margin: 0 0 16px;
+  font-family: var(--font-family-headings);
+  font-size: 56px;
+  line-height: 1.1;
+  color: var(--color-text-main);
+  margin-bottom: 16px;
+  letter-spacing: -1px;
 }
 
 .profile__subtitle {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
   font-size: 20px;
   line-height: 1.4;
-  color: var(--text-muted);
-  margin: 0 0 24px;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.profile__divider {
-  color: var(--accent-color);
-  margin: 0 8px;
+/* Barra separadora "|" */
+.profile__separator {
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-light);
 }
 
 .profile__description {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
   font-size: 16px;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 0 32px;
+  line-height: 1.6; /* Valor decimal sin unidades */
+  color: var(--color-text-secondary);
+  margin-bottom: 40px;
 }
 
+/* Botones y Acciones */
 .profile__actions {
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
-/* Subrayado con degradado personalizado */
-.profile__link {
-  color: var(--text-main);
-  text-decoration: none;
+.profile__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background-color: var(--color-accent);
+  color: var(--color-text-main);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
   font-size: 16px;
-  font-weight: 600;
-  line-height: 1.5;
-  background-image: linear-gradient(90deg, var(--accent-color), #00ff7b);
-  background-size: 100% 2px;
+  border-radius: 8px;
+  transition: var(--transition-default);
+  outline: none;
+}
+
+.profile__button:hover,
+.profile__button:focus-visible {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(109, 109, 255, 0.25);
+}
+
+/* Subrayado creativo en degradado para "Descargar CV" */
+.profile__link-cv {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  font-size: 16px;
+  color: var(--color-text-main);
+  padding-bottom: 4px;
+  outline: none;
+
+  /* Degradado asignado como imagen de fondo en el borde inferior */
+  background-image: linear-gradient(90deg, var(--color-accent), #a855f7);
+  background-size: 100% 3px;
   background-position: 0 100%;
   background-repeat: no-repeat;
-  padding-bottom: 4px;
-  transition:
-    background-size 0.3s ease,
-    color 0.3s ease;
+  transition: var(--transition-default);
 }
 
-.profile__link:hover {
-  background-size: 100% 4px;
-  color: var(--accent-color);
-}
-
-.profile__button {
-  background-color: var(--accent-color);
-  color: #ffffff;
-  padding: 12px 28px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  line-height: 1.5;
-  display: inline-block;
-  transition: opacity 0.3s ease;
-  trnsform:
-    0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.profile__button:hover {
+.profile__link-cv:hover,
+.profile__link-cv:focus-visible {
   opacity: 0.85;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(109, 109, 255, 0.35);
+  background-size: 100% 4px;
+}
+
+/* Columna del Avatar (Escritorio / Tablet) */
+.profile__avatar-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   ADAPTACIÓN RESPONSIVA (.profile)
+   ========================================================================== */
+
+/* Tablet (hasta 1023px) */
+@media (max-width: 1023px) {
+  .profile {
+    padding: 60px 0;
+    gap: 32px;
+  }
+
+  .profile__title {
+    font-size: 42px;
+  }
+
+  .profile__subtitle {
+    font-size: 18px;
+  }
+
+  .profile__avatar-container {
+    width: 240px;
+    height: 240px;
+  }
+
+  .profile__avatar {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+/* Móvil (hasta 767px) */
+@media (max-width: 767px) {
+  .profile {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 40px 0;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .profile__content {
+    align-items: center;
+  }
+
+  .profile__info {
+    max-width: 100%;
+  }
+
+  .profile__title {
+    font-size: 32px;
+  }
+
+  .profile__subtitle {
+    font-size: 16px;
+  }
+
+  /* Requerimiento del brief: Ocultar la barra separadora en móviles */
+  .profile__separator {
+    display: none;
+  }
+
+  .profile__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .profile__button {
+    width: 100%;
+  }
+
+  .profile__link-cv {
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  /* Requerimiento del brief: En móvil width: 100% y height: 280px con object-fit */
+  .profile__avatar-container {
+    width: 100%;
+  }
+
+  .profile__avatar {
+    width: 100%;
+    height: 280px;
+    border-radius: 16px; /* Forma de tarjeta adaptable para móvil */
+    object-fit: cover;
+  }
 }

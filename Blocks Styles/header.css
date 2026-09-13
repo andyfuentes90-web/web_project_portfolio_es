@@ -2,46 +2,113 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 40px 80px;
+  width: 100%;
+  padding: 32px 0;
+  background-color: transparent;
+  position: relative;
+  z-index: 10;
+}
+
+/* Logotipo */
+.header__logo-link {
+  display: inline-block;
+  outline: none;
 }
 
 .header__logo {
-  height: 32px;
-  width: auto;
-}
-
-.header__nav-list {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.header__nav-link {
-  color: var(--text-main);
+  font-family: var(--font-family-headings);
+  font-size: 24px;
+  color: var(--color-text-main);
   text-decoration: none;
-  font-size: 16px;
-  line-height: 1.5;
-  position: relative;
-  transition: color 0.3s ease;
+  letter-spacing: -0.5px;
+  transition: var(--transition-default);
 }
 
-.header__nav-link::after {
+.header__logo-link:hover .header__logo,
+.header__logo-link:focus-visible .header__logo {
+  color: var(--color-accent);
+}
+
+/* Menú de Navegación */
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header__menu-item {
+  display: flex;
+  align-items: center;
+}
+
+.header__link {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  position: relative;
+  padding: 4px 0;
+  outline: none;
+}
+
+/* Estados Hover y Focus-Visible en Enlaces */
+.header__link:hover,
+.header__link:focus-visible {
+  color: var(--color-text-main);
+}
+
+/* Indicador decorativo inferior al hacer hover */
+.header__link::after {
   content: "";
   position: absolute;
-  bottom: -4px;
+  bottom: 0;
   left: 0;
-  width: 0%;
+  width: 0;
   height: 2px;
-  background-color: var(--accent-color);
+  background-color: var(--color-accent);
   transition: width 0.3s ease;
 }
-.header__nav-link:hover {
-  color: var(--accent-color);
-}
-.header__nav-link:hover::after {
+
+.header__link:hover::after,
+.header__link:focus-visible::after {
   width: 100%;
+}
+
+/* ==========================================================================
+   ADAPTACIÓN RESPONSIVA DEL HEADER
+   ========================================================================== */
+
+/* Tablet (hasta 1023px) */
+@media (max-width: 1023px) {
+  .header {
+    padding: 24px 0;
+  }
+
+  .header__menu {
+    gap: 24px;
+  }
+}
+
+/* Móvil (hasta 767px) */
+@media (max-width: 767px) {
+  .header {
+    padding: 20px 0;
+  }
+
+  .header__logo {
+    font-size: 20px;
+  }
+
+  .header__menu {
+    gap: 16px;
+  }
+
+  .header__link {
+    font-size: 14px;
+  }
 }

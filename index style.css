@@ -1,4 +1,4 @@
-/* 1. FUENTES */
+/* 1. FUENTES (@font-face)*/
 
 /* Archivo Black - Regular */
 @font-face {
@@ -75,7 +75,7 @@
   --transition-default: all 0.3s ease;
 }
 
-/* 3. RESETEO BASE Y CONFIGURACIÓN GLOBAL */
+/* 3. RESETEO BASE Y REGLAS GENERALES */
 
 *,
 *::before,
@@ -156,54 +156,15 @@ button {
   background: none;
 }
 
-/* 4. ESTRUCTURA Y CONTENEDOR PRINCIPAL BEM (.page) */
+/* 4. IMPORTACIÓN DE RESET Y BLOQUES BEM 
 
-.page {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.page__content {
-  width: 100%;
-  max-width: var(--container-max-width);
-  padding: var(--container-padding-desktop);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  box-sizing: border-box;
-}
-
-.content {
-  flex: 1; /* Empuja el footer al fondo si hay poco contenido */
-}
-
-/* 5. AJUSTES RESPONSIVOS BASE (BREAKPOINTS)*/
-
-/* Tablet (hasta 1023px) */
-@media (max-width: 1023px) {
-  .page__content {
-    padding: var(--container-padding-tablet);
-  }
-}
-
-/* Móvil (hasta 767px) */
-@media (max-width: 767px) {
-  .page__content {
-    padding: var(--container-padding-mobile);
-  }
-}
-
-/* 6. RESET / Vendor */
+/* RESET / Vendor */
 @import url("./Vendor/normalize.css");
 
-/* 7. Bloques BEM */
+/* 7. Bloques BEM (.Blocks\ Styles)*/
 @import url("./Blocks\ Styles/header.css");
 @import url("./Blocks\ Styles/profile.css");
 @import url("./Blocks\ Styles/projects.css");
 @import url("./Blocks\ Styles/contacts.css");
 @import url("./Blocks\ Styles/footer.css");
-@import url("./Blocks\ Styles/hero.css");
+@import url("./Blocks\ Styles/page.css");

@@ -1,116 +1,194 @@
 .projects {
-  padding: 60px 0 120px;
+  padding: 80px 0;
+  width: 100%;
 }
 
 .projects__title {
-  font-family: var(--font-title);
+  font-family: var(--font-family-headings);
   font-size: 36px;
   line-height: 1.2;
-  margin: 0 0 48px;
+  color: var(--color-text-main);
+  margin-bottom: 48px;
+  text-align: left;
 }
 
+/* Grilla de Proyectos */
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 32px;
+  width: 100%;
 }
+
+/* --- BLOQUE BEM: TARJETA DE PROYECTO (.project-card) --- */
 .project-card {
-  background-color: var(--surface-color);
-  border-radius: 12px;
-  border: 1px solid transparent;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition:
-    transform border-color 0.3s ease,
     transform 0.3s ease,
+    border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
 
-.project-card__image-container {
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-accent);
+  box-shadow: 0 12px 30px rgba(109, 109, 255, 0.15);
+}
+
+/* Contenedor de Imagen y Relación de Aspecto (16:9) */
+.project-card__image-wrapper {
   position: relative;
-  aspect-ratio: 16 / 9;
   width: 100%;
+  aspect-ratio: 16 / 9; /* Requerimiento clave del brief */
   overflow: hidden;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  background-color: #000000;
 }
 
 .project-card__image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover {
-  border-color: rgba(109, 109, 255, 0.4);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  object-fit: cover; /* Evita que la imagen se deforme */
+  transition: transform 0.5s ease;
 }
 
 .project-card:hover .project-card__image {
-  transform: scale(1.06);
+  transform: scale(1.05); /* Efecto zoom suave al hacer hover */
 }
 
+/* Overlay / Velo de degradado para asegurar legibilidad */
 .project-card__overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
-  pointer-events: none;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  pointer-events: none; /* Permite interactuar a través de la capa */
 }
 
+/* Contenido de la Tarjeta */
 .project-card__content {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 1;
 }
 
 .project-card__title {
-  font-family: var(--font-title);
+  font-family: var(--font-family-headings);
   font-size: 22px;
   line-height: 1.3;
-  margin: 0 0 12px;
+  color: var(--color-text-main);
+  margin-bottom: 12px;
 }
 
 .project-card__description {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--text-muted);
-  margin: 0 0 20px;
-  flex-grow: 1;
+  font-family: var(--font-family-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+  flex: 1; /* Mantiene alineados los botones en tarjetas con texto de distinta longitud */
 }
 
+/* Tags de Tecnologías */
 .project-card__tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .project-card__tag {
+  font-family: var(--font-family-body);
   font-size: 12px;
-  line-height: 1;
-  padding: 6px 12px;
-  background-color: rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
-  color: var(--text-muted);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent);
+  background-color: rgba(109, 109, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(109, 109, 255, 0.2);
+}
+
+/* Enlaces y Botones de la Tarjeta */
+.project-card__links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .project-card__link {
-  color: var(--accent-color);
-  text-decoration: none;
-  font-weight: 600;
+  font-family: var(--font-family-body);
   font-size: 14px;
-  line-height: 1.5;
-  transition: color 0.3s ease;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-main);
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  transition: var(--transition-default);
+  outline: none;
 }
 
-.project-card__link:hover {
-  opacity: 0.8;
-  text-decoration: underline;
+.project-card__link:hover,
+.project-card__link:focus-visible {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-text-main);
+}
+
+/* ==========================================================================
+   ADAPTACIÓN RESPONSIVA 
+   ========================================================================== */
+
+/* Tablet (hasta 1023px) */
+@media (max-width: 1023px) {
+  .projects {
+    padding: 60px 0;
+  }
+
+  .projects__title {
+    font-size: 30px;
+    margin-bottom: 36px;
+  }
+
+  .projects__grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+}
+
+/* Móvil (hasta 767px) */
+@media (max-width: 767px) {
+  .projects {
+    padding: 40px 0;
+  }
+
+  .projects__title {
+    font-size: 26px;
+    margin-bottom: 28px;
+  }
+
+  /* Ajuste a 1 sola columna fluida en móviles */
+  .projects__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card__content {
+    padding: 20px;
+  }
+
+  .project-card__title {
+    font-size: 20px;
+  }
 }
