@@ -1,11 +1,21 @@
-/* 1. FUENTES (@font-face)*/
+/* 1. IMPORTACIÓN DE  BLOQUES BEM 
+
+@import url("./blocks/header.css");
+@import url("./blocks/profile.css");  
+@import url("./blocks/projects.css");
+@import url("./blocks/contacts.css");
+@import url("./blocks/footer.css");
+@import url("./blocks/page.css");
+
+
+/* 2. FUENTES (@font-face)*/
 
 /* Archivo Black - Regular */
 @font-face {
   font-family: "Archivo Black";
   src:
-    url("./files/fonts/ArchivoBlack-Regular.woff2") format("woff2"),
-    url("./files/fonts/ArchivoBlack-Regular.woff") format("woff");
+    url("./fonts/ArchivoBlack-Regular.woff2") format("woff2"),
+    url("./fonts/ArchivoBlack-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -15,7 +25,7 @@
 @font-face {
   font-family: "Open Sans";
   src:
-    url("./files/fonts/OpenSans-Light.woff2") format("woff2"),
+    url("./fonts/OpenSans-Light.woff2") format("woff2"),
     url("./fonts/OpenSans-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -26,8 +36,8 @@
 @font-face {
   font-family: "Open Sans";
   src:
-    url("./files/fonts/OpenSans-Regular.woff2") format("woff2"),
-    url("./files/fonts/OpenSans-Regular.woff") format("woff");
+    url("./fonts/OpenSans-Regular.woff2") format("woff2"),
+    url("./fonts/OpenSans-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -37,15 +47,26 @@
 @font-face {
   font-family: "Open Sans";
   src:
-    url("./files/fonts/OpenSans-SemiBold.woff2") format("woff2"),
+    url("./fonts/OpenSans-SemiBold.woff2") format("woff2"),
     url("./fonts/OpenSans-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
-/* 2. VARIABLES GLOBALES */
-::root {
+/* Open Sans Bold (700) */
+@font-face {
+  font-family: "Open Sans";
+  src:
+    url("./fonts/OpenSans-Bold.woff2") format("woff2"),
+    url("./fonts/OpenSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 3. VARIABLES GLOBALES */
+:root {
   /* Paleta de Colores */
   --color-bg-main: #000000;
   --color-bg-secondary: #0b0c10;
@@ -75,7 +96,7 @@
   --transition-default: all 0.3s ease;
 }
 
-/* 3. RESETEO BASE Y REGLAS GENERALES */
+/* 4. RESETEO BASE Y REGLAS GENERALES */
 
 *,
 *::before,
@@ -94,12 +115,13 @@ body {
   font-family: var(--font-family-body);
   font-weight: var(--font-weight-regular);
   font-size: 16px;
-  line-height: 1.5; /* Valor decimal sin unidad */
+  line-height: 1.5;
   color: var(--color-text-main);
   background-color: var(--color-bg-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* Previene scroll horizontal */
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Encabezados */
@@ -155,16 +177,3 @@ button {
   border: none;
   background: none;
 }
-
-/* 4. IMPORTACIÓN DE RESET Y BLOQUES BEM 
-
-/* RESET / Vendor */
-@import url("./Vendor/normalize.css");
-
-/* 7. Bloques BEM (.Blocks\ Styles)*/
-@import url("./Blocks\ Styles/header.css");
-@import url("./Blocks\ Styles/profile.css");
-@import url("./Blocks\ Styles/projects.css");
-@import url("./Blocks\ Styles/contacts.css");
-@import url("./Blocks\ Styles/footer.css");
-@import url("./Blocks\ Styles/page.css");

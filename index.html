@@ -10,14 +10,11 @@
     <meta name="author" content="Andres Fuentes" />
     <title>Andres Fuentes | Portafolio Profesional</title>
 
-    <!-- Favicon (Opcional/Recomendado) -->
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
-
-    <!-- Hoja de Estilos Normalize (Vendor) -->
+    <!-- Normalización CSS externa (Vendor) -->
     <link rel="stylesheet" href="./vendor/normalize.css" />
 
     <!-- Hoja de Estilos Principal -->
-    <link rel="stylesheet" href="./index style.css" />
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body class="page">
     <!-- Efecto de Fondo: Degradados Radiales (Glow Effect) -->
@@ -28,14 +25,23 @@
     <div class="page__content">
       <!-- ==================== HEADER ==================== -->
       <header class="header">
-        <a href="#hero" class="header__logo-link">
+        <a
+          href="#profile"
+          class="header__logo-link"
+          aria-label="Ir al inicio del perfil"
+        >
           <span class="header__logo">&lt;EF /&gt;</span>
         </a>
 
-        <nav class="header__nav">
+        <nav class="header__nav" aria-label="Navegación principal">
           <ul class="header__menu">
             <li class="header__menu-item">
               <a href="#profile" class="header__link">Sobre mí</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#skills" class="header__link"
+                >Habilidades y Herramientas</a
+              >
             </li>
             <li class="header__menu-item">
               <a href="#projects" class="header__link">Proyectos</a>
@@ -49,7 +55,11 @@
 
       <main class="content">
         <!-- ==================== HERO / PROFILE ==================== -->
-        <section class="profile" id="profile">
+        <section
+          class="profile"
+          id="profile"
+          aria-label="Introducción y perfil profesional de Andres Fuentes"
+        >
           <div class="profile__info">
             <h1 class="profile__title">Andres Fuentes</h1>
             <p class="profile__subtitle">
@@ -71,22 +81,37 @@
             </p>
 
             <div class="profile__actions">
-              <a href="#contact" class="profile__button">Contáctame</a>
+              <!-- Botón Principal CTA Primario (CV) -->
               <a
                 href="./assets/CV-Andres-Fuentes.pdf"
-                class="profile__link-cv"
-                download
+                class="profile__cta profile__cta--primary"
+                download="cv-andres-fuentes.pdf"
               >
                 Descargar CV
+              </a>
+              <!-- Botón Secundario (GitHub)-->
+              <a
+                href="https://github.com/andyfuentes90-web"
+                class="profile__cta profile__cta--secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver mi GitHub
+              </a>
+              <!-- Botón Terciario (Contactar)-->
+              <a href="#contact" class="profile__cta profile__cta--tertiary">
+                Hablemos
               </a>
             </div>
           </div>
 
           <div class="profile__avatar-container">
             <img
-              src="./files/images/avatar.png"
+              src="./images/avatar.png"
               alt="Fotografía de perfil de Andres Fuentes"
               class="profile__avatar"
+              width="250"
+              height="250"
             />
           </div>
         </section>
@@ -96,24 +121,25 @@
           <h2 class="projects__title">Proyectos Destacados</h2>
 
           <div class="projects__grid">
-            <!-- Tarjeta de Proyecto 1 -->
+            <!-- Tarjeta 1 -->
             <article class="project-card">
               <div class="project-card__image-wrapper">
                 <img
-                  src="./files/images/project-1.png"
+                  src="./images/project-1.png"
                   alt="Vista previa del proyecto Cafetería de la Biblioteca"
                   class="project-card__image"
+                  loading="lazy"
                 />
-                <div class="project-card__overlay"></div>
+                <div class="project-card__overlay" aria-hidden="true"></div>
               </div>
 
               <div class="project-card__content">
                 <h3 class="project-card__title">Cafetería de la Biblioteca</h3>
                 <p class="project-card__description">
-                  Pagina web responsiva de una cafetería, desarrollada desde
-                  cero utilizando HTML5, CSS3 a partrir de un Brief de diseño.
+                  Página web responsiva de una cafetería, desarrollada desde
+                  cero utilizando HTML5 y CSS3 a partir de un Brief de diseño.
                   Para su maquetación se implementaron la metodología BEM,
-                  Flexbox y CSS Grid, asegurando un codigo limpio, modular,
+                  Flexbox y CSS Grid, asegurando un código limpio, modular,
                   mantenible y escalable. El proyecto incluye un menú de
                   navegación intuitivo y un formulario de contacto funcional, y
                   se encuentra publicado para su visualización en GitHub Pages.
@@ -144,15 +170,16 @@
               </div>
             </article>
 
-            <!-- Tarjeta de Proyecto 2 (Plantilla) -->
+            <!-- Tarjeta 2 -->
             <article class="project-card">
               <div class="project-card__image-wrapper">
                 <img
-                  src="./files/images/project-2.png"
-                  alt="Vista previa del Proyecto 2"
+                  src="./images/project-2.png"
+                  alt="Vista previa del proyecto Tarjeta Presentación Web"
                   class="project-card__image"
+                  loading="lazy"
                 />
-                <div class="project-card__overlay"></div>
+                <div class="project-card__overlay" aria-hidden="true"></div>
               </div>
 
               <div class="project-card__content">
@@ -196,6 +223,49 @@
                 </div>
               </div>
             </article>
+
+            <!-- Tarjeta 3 (.webp según tu árbol de archivos) -->
+            <!-- <article class="project-card">
+              <div class="project-card__image-wrapper">
+                <img
+                  src="./images/project-3.webp"
+                  alt="Vista previa del Proyecto 3"
+                  class="project-card__image"
+                  loading="lazy"
+                />
+                <div class="project-card__overlay" aria-hidden="true"></div>
+              </div>
+
+              <div class="project-card__content">
+                <h3 class="project-card__title">Proyecto 3</h3>
+                <p class="project-card__description">
+                  Descripción del tercer proyecto integrado en tu portafolio
+                  personal.
+                </p>
+
+                <ul class="project-card__tags">
+                  <li class="project-card__tag">React</li>
+                  <li class="project-card__tag">API REST</li>
+                </ul>
+
+                <div class="project-card__links">
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-card__link"
+                    >Demo</a
+                  >
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-card__link"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>-->
           </div>
         </section>
 
@@ -261,16 +331,33 @@
 
         <div class="footer__socials">
           <a
-            href="https://github.com/andyfuentes90-web"
+            href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
             class="footer__social-link"
-            aria-label="GitHub"
+            aria-label="Perfil de Facebook"
           >
             <img
-              src="./files/images/icons/Habilidades y Herramientas/Logotipo GitHub.png"
+              src="./images/icons/social-icons/negative-facebook.png"
               alt=""
               class="footer__social-icon"
+              width="24"
+              height="24"
+            />
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__social-link"
+            aria-label="Perfil de Instagram"
+          >
+            <img
+              src="./images/icons/social-icons/negative-instagram.png"
+              alt=""
+              class="footer__social-icon"
+              width="24"
+              height="24"
             />
           </a>
           <a
@@ -278,12 +365,14 @@
             target="_blank"
             rel="noopener noreferrer"
             class="footer__social-link"
-            aria-label="LinkedIn"
+            aria-label="Perfil de LinkedIn"
           >
             <img
-              src="./files/images/icons/Social Icons/Negative LinkedIn.png"
+              src="./images/icons/social-icons/negative-linkedIn.png"
               alt=""
               class="footer__social-icon"
+              width="24"
+              height="24"
             />
           </a>
           <a
@@ -291,12 +380,14 @@
             target="_blank"
             rel="noopener noreferrer"
             class="footer__social-link"
-            aria-label="Twitter"
+            aria-label="Perfil de X"
           >
             <img
-              src="./files/images/Icons/Social Icons/Negative X.png"
-              alt="
+              src="./images/icons/social-icons/negative-X.png"
+              alt=""
               class="footer__social-icon"
+              width="24"
+              height="24"
             />
           </a>
         </div>

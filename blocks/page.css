@@ -6,47 +6,40 @@
   background-color: var(--color-bg-main);
   overflow: hidden;
 }
-/* Luces Atmosféricas Radiales (Glow Effect) */
+
+/* Base de los Degradados (Glow Effect) */
 .page__glow {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
   pointer-events: none;
   z-index: 0;
 }
 
-.page__glow-item {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.15;
-}
-
-/* Mancha de luz superior izquierda */
-.page__glow-item_position_top-left {
-  top: calc(100px - 200px);
+/* Mancha de luz superior */
+.page__glow_position_top {
+  top: -100px;
   left: calc(10% - 200px);
   width: 500px;
   height: 500px;
   background: radial-gradient(
     circle,
     var(--color-accent) 0%,
-    rgba(0, 0, 0, 0) 70%
+    rgba(109, 109, 255, 0) 70%
   );
 }
 
-/* Mancha de luz inferior derecha */
-.page__glow-item_position_bottom-right {
-  bottom: calc(200px - 200px);
+/* Mancha de luz inferior  */
+.page__glow_position_bottom {
+  bottom: -100px;
   right: calc(5% - 200px);
   width: 600px;
   height: 600px;
   background: radial-gradient(
     circle,
     var(--color-accent) 0%,
-    rgba(0, 0, 0, 0) 70%
+    rgba(109, 109, 255, 0) 70%
   );
 }
 
@@ -65,9 +58,10 @@
 
 .content {
   flex: 1; /* Empuja el footer al fondo si hay poco contenido */
+  width: 100%;
 }
 
-/* 5. AJUSTES RESPONSIVOS BASE (BREAKPOINTS)*/
+/* AJUSTES RESPONSIVOS BASE (BREAKPOINTS)*/
 
 /* Tablet (hasta 1023px) */
 @media (max-width: 1023px) {
@@ -80,5 +74,11 @@
 @media (max-width: 767px) {
   .page__content {
     padding: var(--container-padding-mobile);
+  }
+
+  .page__glow {
+    width: 350px;
+    height: 350px;
+    filter: blur(70px);
   }
 }

@@ -1,0 +1,113 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Enlace del Isologo */
+.header__logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.header__logo-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* Isologo de Texto (<EF />) */
+.header__logo {
+  font-family: var(--font-family-headings);
+  font-size: 1.5rem; /* 24px */
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  letter-spacing: -0.5px;
+  transition: var(--transition-default);
+}
+
+.header__logo-link:hover .header__logo {
+  color: var(--color-text-main);
+  transform: scale(1.05);
+}
+
+/* Barra de Navegación */
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Menú Principal */
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__menu-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Enlaces de Navegación */
+.header__link {
+  font-family: var(--font-family-body);
+  font-size: 0.95rem; /* ~15px */
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  position: relative;
+  padding: 4px 0;
+  transition: var(--transition-default);
+}
+
+/* Efecto hover y activo (Línea inferior animada) */
+.header__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.header__link:hover {
+  color: var(--color-text-main);
+}
+
+.header__link:hover::after {
+  width: 100%;
+}
+
+.header__link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ==================== RESPONSIVE (BREAKPOINTS) ==================== */
+@media (max-width: 767px) {
+  .header {
+    padding: 20px 0;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .header__menu {
+    gap: 20px;
+  }
+
+  .header__link {
+    font-size: 0.875rem; /* 14px en móviles */
+  }
+}
