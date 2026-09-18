@@ -65,7 +65,7 @@
 
 /* ==================== BOTONES CTA ==================== */
 
-.profile__cta {
+.profile__link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -83,15 +83,15 @@
 }
 
 /* Modificador Primario (Descargar CV) */
-.profile__cta--primary {
+.profile__link--primary {
   background-color: var(--color-accent);
   color: var(--color-text-main);
   border: 2px solid var(--color-accent);
   box-shadow: 0 4px 14px rgba(109, 109, 255, 0.25);
 }
 
-.profile__cta--primary:hover,
-.profile__cta--primary:focus-visible {
+.profile__link--primary:hover,
+.profile__link--primary:focus-visible {
   background-color: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
   transform: translateY(-2px);
@@ -99,14 +99,14 @@
 }
 
 /* Modificador Secundario (GitHub) */
-.profile__cta--secondary {
+.profile__link--secondary {
   background-color: transparent;
   color: var(--color-text-main);
   border: 2px solid var(--color-border);
 }
 
-.profile__cta--secondary:hover,
-.profile__cta--secondary:focus-visible {
+.profile__link--secondary:hover,
+.profile__link--secondary:focus-visible {
   background-color: rgba(255, 255, 255, 0.05);
   border-color: var(--color-text-secondary);
   color: var(--color-text-main);
@@ -114,14 +114,14 @@
 }
 
 /* Modificador Terciario (Hablemos) */
-.profile__cta--tertiary {
+.profile__link--tertiary {
   background-color: transparent;
   color: var(--color-accent);
   border: 2px solid transparent;
 }
 
-.profile__cta--tertiary:hover,
-.profile__cta--tertiary:focus-visible {
+.profile__link--tertiary:hover,
+.profile__link--tertiary:focus-visible {
   background-color: rgba(109, 109, 255, 0.1);
   color: var(--color-accent-hover);
   transform: translateY(-2px);
@@ -211,7 +211,7 @@
     width: 100%;
   }
 
-  .profile__cta {
+  .profile__link {
     width: 100%;
   }
 

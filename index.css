@@ -1,12 +1,11 @@
-/* 1. IMPORTACIÓN DE  BLOQUES BEM 
+/* 1. IMPORTACIÓN DE  BLOQUES BEM */
 
 @import url("./blocks/header.css");
-@import url("./blocks/profile.css");  
+@import url("./blocks/profile.css");
 @import url("./blocks/projects.css");
 @import url("./blocks/contacts.css");
 @import url("./blocks/footer.css");
 @import url("./blocks/page.css");
-
 
 /* 2. FUENTES (@font-face)*/
 

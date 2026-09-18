@@ -84,7 +84,7 @@
               <!-- Botón Principal CTA Primario (CV) -->
               <a
                 href="./assets/CV-Andres-Fuentes.pdf"
-                class="profile__cta profile__cta--primary"
+                class="profile__link profile__link--primary"
                 download="cv-andres-fuentes.pdf"
               >
                 Descargar CV
@@ -92,14 +92,14 @@
               <!-- Botón Secundario (GitHub)-->
               <a
                 href="https://github.com/andyfuentes90-web"
-                class="profile__cta profile__cta--secondary"
+                class="profile__link profile__link--secondary"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Ver mi GitHub
               </a>
               <!-- Botón Terciario (Contactar)-->
-              <a href="#contact" class="profile__cta profile__cta--tertiary">
+              <a href="#contact" class="profile__link profile__link--tertiary">
                 Hablemos
               </a>
             </div>
@@ -117,13 +117,18 @@
         </section>
 
         <!-- ==================== PROJECTS ==================== -->
-        <section class="projects" id="projects">
+        <section
+          class="projects"
+          id="projects"
+          aria-label="Proyectos Destacados"
+        >
           <h2 class="projects__title">Proyectos Destacados</h2>
 
-          <div class="projects__grid">
+          <ul class="projects__grid">
             <!-- Tarjeta 1 -->
-            <article class="project-card">
-              <div class="project-card__image-wrapper">
+            <li class="projects__grid-item">
+              <article class="project-card">
+                <div class="project-card_image-wrapper">
                 <img
                   src="./images/project-1.png"
                   alt="Vista previa del proyecto Cafetería de la Biblioteca"
