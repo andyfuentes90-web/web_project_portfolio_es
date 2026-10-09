@@ -1,39 +1,49 @@
 .header {
   width: 100%;
+  padding: 24px 0;
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 0;
-  position: relative;
-  z-index: 10;
 }
-
 /* Enlace del Isologo */
-.header__logo-link {
+.header__logo {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
   border-radius: 4px;
 }
 
-.header__logo-link:focus-visible {
+.header__logo:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 4px;
 }
 
-/* Isologo de Texto (<EF />) */
+/* Logotipo / Monograma */
 .header__logo {
   font-family: var(--font-family-headings);
-  font-size: 1.5rem; /* 24px */
-  font-weight: var(--font-weight-bold);
-  color: var(--color-accent);
+  font-size: 20px;
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-main);
+  text-decoration: none;
   letter-spacing: -0.5px;
-  transition: var(--transition-default);
+  transition: opacity 0.3s ease,;
+  
 }
 
-.header__logo-link:hover .header__logo {
-  color: var(--color-text-main);
-  transform: scale(1.05);
+.header__logo:hover {
+  opacity: 0.8;
 }
 
 /* Barra de Navegación */
@@ -52,7 +62,7 @@
   padding: 0;
 }
 
-.header__menu-item {
+.header__item {
   display: flex;
   align-items: center;
 }
@@ -61,7 +71,7 @@
 .header__link {
   font-family: var(--font-family-body);
   font-size: 0.95rem; /* ~15px */
-  font-weight: var(--font-weight-semibold);
+  font-weight: 500;
   color: var(--color-text-secondary);
   text-decoration: none;
   position: relative;
@@ -99,12 +109,17 @@
 @media (max-width: 767px) {
   .header {
     padding: 20px 0;
+  }
+
+  .header__container {
     flex-direction: column;
     gap: 16px;
   }
 
   .header__menu {
     gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .header__link {

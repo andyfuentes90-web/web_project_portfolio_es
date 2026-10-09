@@ -21,36 +21,33 @@
     <div class="page__glow page__glow_position_top" aria-hidden="true"></div>
     <div class="page__glow page__glow_position_bottom" aria-hidden="true"></div>
 
-    <!-- Contenedor Principal Limitado -->
+        <!-- Contenedor Principal Limitado -->
     <div class="page__content">
       <!-- ==================== HEADER ==================== -->
       <header class="header">
+        <div class="header__container">   
         <a
           href="#profile"
-          class="header__logo-link"
+          class="header__logo"
           aria-label="Ir al inicio del perfil"
         >
-          <span class="header__logo">&lt;EF /&gt;</span>
+          AF
         </a>
-
+        <!-- Menú de Navegación --> 
         <nav class="header__nav" aria-label="Navegación principal">
           <ul class="header__menu">
-            <li class="header__menu-item">
-              <a href="#profile" class="header__link">Sobre mí</a>
+            <li class="header__item">
+              <a href="#about" class="header__link">Sobre mí</a>
             </li>
-            <li class="header__menu-item">
-              <a href="#skills" class="header__link"
-                >Habilidades y Herramientas</a
-              >
-            </li>
-            <li class="header__menu-item">
+            <li class="header__item">
               <a href="#projects" class="header__link">Proyectos</a>
             </li>
-            <li class="header__menu-item">
+            <li class="header__item">
               <a href="#contact" class="header__link">Contacto</a>
             </li>
           </ul>
         </nav>
+        </div>
       </header>
 
       <main class="content">
@@ -124,9 +121,8 @@
         >
           <h2 class="projects__title">Proyectos Destacados</h2>
 
-          <ul class="projects__grid">
+          <div class="projects__grid">
             <!-- Tarjeta 1 -->
-            <li class="projects__grid-item">
               <article class="project-card">
                 <div class="project-card_image-wrapper">
                 <img
@@ -149,12 +145,17 @@
                   navegación intuitivo y un formulario de contacto funcional, y
                   se encuentra publicado para su visualización en GitHub Pages.
                 </p>
-
-                <ul class="project-card__tags">
-                  <li class="project-card__tag">HTML5</li>
-                  <li class="project-card__tag">CSS3</li>
-                  <li class="project-card__tag">BEM</li>
-                </ul>
+                <div class="project-card__tags">
+                  <span class="project-card__tag">
+                    <img src="./images/icons/habilidades-herramientas/HTML5.png" alt="HTML5">=
+                  </span>
+                  <span class="project-card__tag">
+                    <img src="./images/icons/habilidades-herramientas/CSS3.png" alt="CSS3">
+                  </span>
+                  
+                </div>
+                
+              </div>
 
                 <div class="project-card__links">
                   <a
@@ -205,10 +206,14 @@
                   en GitHub Pages.
                 </p>
 
-                <ul class="project-card__tags">
-                  <li class="project-card__tag">JavaScript</li>
-                  <li class="project-card__tag">CSS Grid</li>
-                </ul>
+                <div class="project-card__tags">
+                  <span class="project-card__tag">
+                    <img src="./images/icons/habilidades-herramientas/JavaScript.png" alt="JavaScript">
+                  </span>
+                  <span class="project-card__tag">
+                    <img src="./images/icons/habilidades-herramientas/React.png" alt="React">
+                  </span>
+                </div>
 
                 <div class="project-card__links">
                   <a
@@ -229,48 +234,7 @@
               </div>
             </article>
 
-            <!-- Tarjeta 3 (.webp según tu árbol de archivos) -->
-            <!-- <article class="project-card">
-              <div class="project-card__image-wrapper">
-                <img
-                  src="./images/project-3.webp"
-                  alt="Vista previa del Proyecto 3"
-                  class="project-card__image"
-                  loading="lazy"
-                />
-                <div class="project-card__overlay" aria-hidden="true"></div>
-              </div>
-
-              <div class="project-card__content">
-                <h3 class="project-card__title">Proyecto 3</h3>
-                <p class="project-card__description">
-                  Descripción del tercer proyecto integrado en tu portafolio
-                  personal.
-                </p>
-
-                <ul class="project-card__tags">
-                  <li class="project-card__tag">React</li>
-                  <li class="project-card__tag">API REST</li>
-                </ul>
-
-                <div class="project-card__links">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-card__link"
-                    >Demo</a
-                  >
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-card__link"
-                    >GitHub</a
-                  >
-                </div>
-              </div>
-            </article>-->
+            
           </div>
         </section>
 

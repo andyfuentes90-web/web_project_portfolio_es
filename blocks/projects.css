@@ -15,19 +15,20 @@
 /* Grilla de Proyectos */
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   width: 100%;
 }
 
 /* --- BLOQUE BEM: TARJETA DE PROYECTO (.project-card) --- */
 .project-card {
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--color-border);
+  background-color: var(--color-card-bg #161822);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.01));
   border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%
   transition:
     transform 0.3s ease,
     border-color 0.3s ease,
@@ -44,7 +45,7 @@
 .project-card__image-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; 
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background-color: #000000;
 }
@@ -52,12 +53,12 @@
 .project-card__image {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 
 .project-card:hover .project-card__image {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 /* Overlay / Velo de degradado */
@@ -72,7 +73,7 @@
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 0.85) 100%
   );
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 /* Contenido de la Tarjeta */
@@ -97,7 +98,7 @@
   line-height: 1.6;
   color: var(--color-text-secondary);
   margin-bottom: 20px;
-  flex: 1; 
+  flex: 1;
 }
 
 /* Tags de Tecnologías */
