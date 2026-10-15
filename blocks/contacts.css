@@ -1,8 +1,11 @@
 .contact {
-  padding: 80px 0;
+  padding: 80px 0 100px;
   width: 100%;
-  max-width: 680px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .contact__title {
@@ -10,106 +13,78 @@
   font-size: 36px;
   line-height: 1.2;
   color: var(--color-text-main);
-  margin-bottom: 16px;
-  text-align: center;
+  margin-bottom: 24px;
 }
 
-.contact__subtitle {
+
+.contact__email {
   font-family: var(--font-family-body);
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--color-text-secondary);
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-/* Formulario */
-.contact__form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  width: 100%;
-  background-color: var(--color-card-bg);
-  padding: 40px;
-  border-radius: 16px;
-  border: 1px solid var(--color-border);
-}
-
-.contact__field {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-}
-
-.contact__label {
-  font-family: var(--font-family-body);
+  font-size: 18px;
   font-weight: var(--font-weight-semibold);
-  font-size: 14px;
-  color: var(--color-text-main);
+  color: var(--color-accent);
+  text-decoration: none;
+  margin-bottom: 40px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: inline-block;
 }
 
-/* Estilos de Inputs y Textarea */
-.contact__input,
-.contact__textarea {
-  width: 100%;
-  padding: 14px 16px;
-  background-color: var(--color-bg-main);
+.contact__email:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.contact__email:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+
+.contact__socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.contact__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-card-bg);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
-  color: var(--color-text-main);
-  font-family: var(--font-family-body);
-  font-size: 15px;
-  outline: none;
   transition: var(--transition-default);
+  outline: none;
 }
 
-.contact__textarea {
-  resize: vertical;
-  min-height: 120px;
+
+.contact__social-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) invert(0.7); /* Tono claro desactivado */
+  transition: filter 0.3s ease;
 }
 
-/* Estados Focus y Hover en Inputs */
-.contact__input:hover,
-.contact__textarea:hover {
-  border-color: rgba(109, 109, 255, 0.4);
-}
 
-.contact__input:focus,
-.contact__textarea:focus {
+.contact__social-link:hover,
+.contact__social-link:focus-visible {
   border-color: var(--color-accent);
+  background-color: rgba(109, 109, 255, 0.1);
+  transform: translateY(-3px);
   box-shadow: 0 0 0 3px rgba(109, 109, 255, 0.2);
 }
 
-.contact__input::placeholder,
-.contact__textarea::placeholder {
-  color: #555866;
+.contact__social-link:hover .contact__social-icon,
+.contact__social-link:focus-visible .contact__social-icon {
+  filter: brightness(0) invert(1); 
 }
-
-/* Botón de Envío */
-.contact__button {
-  width: 100%;
-  padding: 16px;
-  background-color: var(--color-accent);
-  color: var(--color-text-main);
-  font-family: var(--font-family-body);
-  font-weight: var(--font-weight-semibold);
-  font-size: 16px;
-  border-radius: 8px;
-  transition: var(--transition-default);
-  outline: none;
-  margin-top: 8px;
 }
-
-.contact__button:hover,
-.contact__button:focus-visible {
-  background-color: var(--color-accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(109, 109, 255, 0.3);
-}
-/* ==========================================================================
-   ADAPTACIÓN RESPONSIVA 
-   ========================================================================== */
+/* ==================== RESPONSIVE ==================== */
 
 /* Tablet (hasta 1023px) */
 @media (max-width: 1023px) {
@@ -125,14 +100,20 @@
 /* Móvil (hasta 767px) */
 @media (max-width: 767px) {
   .contact {
-    padding: 40px 0;
+    padding: 60px 0 80px;
   }
 
   .contact__title {
     font-size: 28px;
+    margin-bottom: 16px;
   }
 
-  .contact__form {
-    padding: 24px 16px;
+  .contact__email {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .contact__socials {
+    gap: 16px;
   }
 }

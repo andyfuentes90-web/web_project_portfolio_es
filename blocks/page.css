@@ -12,7 +12,7 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.4;
+  opacity: 0.35;
   pointer-events: none;
   z-index: 0;
 }
@@ -20,7 +20,7 @@
 /* Mancha de luz superior */
 .page__glow_position_top {
   top: -100px;
-  left: calc(10% - 200px);
+  left: calc(50% - 600px);
   width: 500px;
   height: 500px;
   background: radial-gradient(
@@ -48,9 +48,9 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: var(--container-max-width);
+  max-width: var(--container-max-width, 1440px);
   margin: 0 auto;
-  padding: var(--container-padding-desktop);
+  padding: var(--container-padding-desktop, 0 80px);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -61,24 +61,33 @@
   width: 100%;
 }
 
-/* AJUSTES RESPONSIVOS BASE (BREAKPOINTS)*/
+/* ==================== RESPONSIVE ==================== */
 
 /* Tablet (hasta 1023px) */
 @media (max-width: 1023px) {
   .page__content {
-    padding: var(--container-padding-tablet);
+    padding: var(--container-padding-tablet, 0 40px);
   }
 }
 
 /* Móvil (hasta 767px) */
 @media (max-width: 767px) {
   .page__content {
-    padding: var(--container-padding-mobile);
+    padding: var(--container-padding-mobile, 0 20px);
   }
 
   .page__glow {
-    width: 350px;
-    height: 350px;
+    width: 320px;
+    height: 320px;
     filter: blur(70px);
+  }
+  .page__glow_position_top {
+    top: -80px;
+    left: calc(50% - 200px);
+  }
+
+  .page__glow_position_bottom {
+    bottom: -80px;
+    right: calc(50% - 220px);
   }
 }

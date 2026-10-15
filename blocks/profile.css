@@ -31,7 +31,7 @@
   font-weight: var(--font-weight-semibold);
   font-size: 20px;
   line-height: 1.4;
-  color: var(--color-accent);
+  color: color: rgba(255, 255, 255, 0.5);
   margin-bottom: 24px;
   display: flex;
   align-items: center;
@@ -39,7 +39,6 @@
   flex-wrap: wrap;
 }
 
-/* Barra separadora "|" */
 .profile__separator {
   color: var(--color-text-secondary);
   font-weight: var(--font-weight-light);
@@ -58,7 +57,7 @@
 .profile__actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -66,28 +65,52 @@
 /* ==================== BOTONES CTA ==================== */
 
 .profile__link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 22px;
   font-family: var(--font-family-body);
   font-weight: var(--font-weight-semibold);
-  font-size: 15px;
-  border-radius: 8px;
+  font-size: 16px;
+  color: var(--color-text-main);
   text-decoration: none;
-  white-space: nowrap;
-  transition: var(--transition-default);
-  outline: none;
-  cursor: pointer;
-  box-sizing: border-box;
+  padding-bottom: 4px;
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: opacity 0.3s ease;
 }
 
-/* Modificador Primario (Descargar CV) */
-.profile__link--primary {
-  background-color: var(--color-accent);
-  color: var(--color-text-main);
-  border: 2px solid var(--color-accent);
-  box-shadow: 0 4px 14px rgba(109, 109, 255, 0.25);
+.profile__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #6d6dff 0%, #a033ff 100%);
+  transition: opacity 0.3s ease;
+}
+
+.profile__link:hover {
+  color: var(--color-accent, #6d6dff);
+}
+
+.profile__link:hover::after {
+  opacity: 0.7;
+}
+
+.profile__link:focus-visible {
+  outline: 2px solid var(--color-accent, #6d6dff);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.profile__link--primary,
+.profile__link--secondary,
+.profile__link--tertiary {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 0 4px 0 !important;
 }
 
 .profile__link--primary:hover,
@@ -98,26 +121,11 @@
   box-shadow: 0 8px 20px rgba(109, 109, 255, 0.45);
 }
 
-/* Modificador Secundario (GitHub) */
-.profile__link--secondary {
-  background-color: transparent;
-  color: var(--color-text-main);
-  border: 2px solid var(--color-border);
-}
-
 .profile__link--secondary:hover,
 .profile__link--secondary:focus-visible {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: var(--color-text-secondary);
-  color: var(--color-text-main);
+  background-color: rgba(109, 109, 255, 0.1);
+  color: var(--color-accent-hover);
   transform: translateY(-2px);
-}
-
-/* Modificador Terciario (Hablemos) */
-.profile__link--tertiary {
-  background-color: transparent;
-  color: var(--color-accent);
-  border: 2px solid transparent;
 }
 
 .profile__link--tertiary:hover,
@@ -130,8 +138,8 @@
 /* Columna del Avatar (Escritorio / Tablet) */
 .profile__avatar-container {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 360px;
+  height: 480px;
   flex-shrink: 0;
   display: flex;
   justify-content: center;
@@ -141,15 +149,13 @@
 .profile__avatar {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 12px;
   object-fit: cover;
   border: 2px solid var(--color-border);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* ==========================================================================
-   ADAPTACIÓN RESPONSIVA (.profile)
-   ========================================================================== */
+/* ==================== RESPONSIVE ==================== */
 
 /* Tablet (hasta 1023px) */
 @media (max-width: 1023px) {
@@ -172,8 +178,8 @@
   }
 
   .profile__avatar {
-    width: 260px;
-    height: 260px;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -189,6 +195,7 @@
 
   .profile__info {
     max-width: 100%;
+    align-items: center;
   }
 
   .profile__title {
@@ -197,9 +204,10 @@
 
   .profile__subtitle {
     font-size: 16px;
+    justify-content: center;
   }
 
-  /* Requerimiento del brief: Ocultar la barra separadora en móviles */
+  /* Ocultar la barra separadora en móviles */
   .profile__separator {
     display: none;
   }
@@ -215,7 +223,6 @@
     width: 100%;
   }
 
-  /* Requerimiento del brief: En móvil width: 100% y height: 280px con object-fit */
   .profile__avatar-container {
     width: 100%;
     height: auto;

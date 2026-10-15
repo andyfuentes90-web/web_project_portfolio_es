@@ -1,13 +1,48 @@
-/* 1. IMPORTACIÓN DE  BLOQUES BEM */
+/* IMPORTACIÓN DE  BLOQUES BEM */
 
 @import url("./blocks/header.css");
 @import url("./blocks/profile.css");
+@import url("./blocks/skills.css");
 @import url("./blocks/projects.css");
 @import url("./blocks/contacts.css");
 @import url("./blocks/footer.css");
 @import url("./blocks/page.css");
 
-/* 2. FUENTES (@font-face)*/
+html {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+/* Estilos para navegadores WebKit (Chrome, Safari, Edge, Brave) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-main, #000000);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #23232c;
+  border-radius: 6px;
+  border: 2px solid var(--color-bg-main, #000000);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent, #6d6dff);
+}
+
+/* Estilos compatibles con Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #23232c var(--color-bg-main, #000000);
+}
+
+/* FUENTES (@font-face)*/
 
 /* Archivo Black - Regular */
 @font-face {
@@ -64,7 +99,7 @@
   font-display: swap;
 }
 
-/* 3. VARIABLES GLOBALES */
+/* VARIABLES GLOBALES */
 :root {
   /* Paleta de Colores */
   --color-bg-main: #000000;
@@ -95,7 +130,7 @@
   --transition-default: all 0.3s ease;
 }
 
-/* 4. RESETEO BASE Y REGLAS GENERALES */
+/* RESETEO BASE Y REGLAS GENERALES */
 
 *,
 *::before,

@@ -21,32 +21,32 @@
     <div class="page__glow page__glow_position_top" aria-hidden="true"></div>
     <div class="page__glow page__glow_position_bottom" aria-hidden="true"></div>
 
-        <!-- Contenedor Principal Limitado -->
+    <!-- Contenedor Principal Limitado -->
     <div class="page__content">
       <!-- ==================== HEADER ==================== -->
       <header class="header">
-        <div class="header__container">   
-        <a
-          href="#profile"
-          class="header__logo"
-          aria-label="Ir al inicio del perfil"
-        >
-          AF
-        </a>
-        <!-- Menú de Navegación --> 
-        <nav class="header__nav" aria-label="Navegación principal">
-          <ul class="header__menu">
-            <li class="header__item">
-              <a href="#about" class="header__link">Sobre mí</a>
-            </li>
-            <li class="header__item">
-              <a href="#projects" class="header__link">Proyectos</a>
-            </li>
-            <li class="header__item">
-              <a href="#contact" class="header__link">Contacto</a>
-            </li>
-          </ul>
-        </nav>
+        <div class="header__container">
+          <a
+            href="#profile"
+            class="header__logo"
+            aria-label="Ir al inicio del perfil"
+          >
+            AF
+          </a>
+          <!-- Menú de Navegación -->
+          <nav class="header__nav" aria-label="Navegación principal">
+            <ul class="header__menu">
+              <li class="header__item">
+                <a href="#profile" class="header__link">Sobre mí</a>
+              </li>
+              <li class="header__item">
+                <a href="#projects" class="header__link">Proyectos</a>
+              </li>
+              <li class="header__item">
+                <a href="#contact" class="header__link">Contacto</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </header>
 
@@ -93,7 +93,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Ver mi GitHub
+                Enlace a GitHub
               </a>
               <!-- Botón Terciario (Contactar)-->
               <a href="#contact" class="profile__link profile__link--tertiary">
@@ -113,6 +113,49 @@
           </div>
         </section>
 
+        <!-- ==================== SKILLS ==================== -->
+        <section
+          class="skills"
+          id="skills"
+          aria-label="Habilidades y herramientas"
+        >
+          <h2 class="skills__title">Habilidades y herramientas</h2>
+
+          <div class="skills__list">
+            <img
+              src="./images/icons/habilidades-herramientas/HTML5.png"
+              alt="HTML5"
+              class="skills__icon"
+            />
+            <img
+              src="./images/icons/habilidades-herramientas/CSS3.png"
+              alt="CSS3"
+              class="skills__icon"
+            />
+            <img
+              src="./images/icons/habilidades-herramientas/JavaScript.png"
+              alt="JavaScript"
+              class="skills__icon"
+            />
+            <img
+              src="./images/icons/habilidades-herramientas/Git.png"
+              alt="Git"
+              class="skills__icon"
+            />
+            <img
+              src="./images/icons/habilidades-herramientas/GitHub.png"
+              alt="GitHub"
+              class="skills__icon skills__icon_theme_light"
+            />
+
+            <img
+              src="./images/icons/habilidades-herramientas/ChatGPT.png"
+              alt="ChatGPT"
+              class="skills__icon skills__icon_theme_light"
+            />
+          </div>
+        </section>
+
         <!-- ==================== PROJECTS ==================== -->
         <section
           class="projects"
@@ -123,8 +166,8 @@
 
           <div class="projects__grid">
             <!-- Tarjeta 1 -->
-              <article class="project-card">
-                <div class="project-card_image-wrapper">
+            <article class="project-card">
+              <div class="project-card__image-wrapper">
                 <img
                   src="./images/project-1.png"
                   alt="Vista previa del proyecto Cafetería de la Biblioteca"
@@ -132,10 +175,24 @@
                   loading="lazy"
                 />
                 <div class="project-card__overlay" aria-hidden="true"></div>
+
+                <div class="project-card__tags">
+                  <img
+                    src="./images/icons/habilidades-herramientas/html5.png"
+                    alt="HTML5"
+                    class="project-card__tag-icon"
+                  />
+
+                  <img
+                    src="./images/icons/habilidades-herramientas/css3.png"
+                    alt="CSS3"
+                    class="project-card__tag-icon"
+                  />
+                </div>
               </div>
 
               <div class="project-card__content">
-                <h3 class="project-card__title">Cafetería de la Biblioteca</h3>
+                <h3 class="project-card__title">Pagina web de una Cafetería</h3>
                 <p class="project-card__description">
                   Página web responsiva de una cafetería, desarrollada desde
                   cero utilizando HTML5 y CSS3 a partir de un Brief de diseño.
@@ -145,17 +202,6 @@
                   navegación intuitivo y un formulario de contacto funcional, y
                   se encuentra publicado para su visualización en GitHub Pages.
                 </p>
-                <div class="project-card__tags">
-                  <span class="project-card__tag">
-                    <img src="./images/icons/habilidades-herramientas/HTML5.png" alt="HTML5">=
-                  </span>
-                  <span class="project-card__tag">
-                    <img src="./images/icons/habilidades-herramientas/CSS3.png" alt="CSS3">
-                  </span>
-                  
-                </div>
-                
-              </div>
 
                 <div class="project-card__links">
                   <a
@@ -163,7 +209,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="project-card__link"
-                    >Demo</a
+                    >Demo en vivo</a
                   >
                   <a
                     href="#"
@@ -186,6 +232,20 @@
                   loading="lazy"
                 />
                 <div class="project-card__overlay" aria-hidden="true"></div>
+
+                <div class="project-card__tags">
+                  <img
+                    src="./images/icons/habilidades-herramientas/JavaScript.png"
+                    alt="JavaScript"
+                    class="project-card__tag-icon"
+                  />
+
+                  <img
+                    src="./images/icons/habilidades-herramientas/React.png"
+                    alt="React"
+                    class="project-card__tag-icon"
+                  />
+                </div>
               </div>
 
               <div class="project-card__content">
@@ -206,22 +266,13 @@
                   en GitHub Pages.
                 </p>
 
-                <div class="project-card__tags">
-                  <span class="project-card__tag">
-                    <img src="./images/icons/habilidades-herramientas/JavaScript.png" alt="JavaScript">
-                  </span>
-                  <span class="project-card__tag">
-                    <img src="./images/icons/habilidades-herramientas/React.png" alt="React">
-                  </span>
-                </div>
-
                 <div class="project-card__links">
                   <a
                     href="#"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="project-card__link"
-                    >Demo</a
+                    >Demo en vivo</a
                   >
                   <a
                     href="#"
@@ -233,62 +284,75 @@
                 </div>
               </div>
             </article>
-
-            
           </div>
         </section>
 
         <!-- ==================== CONTACT ==================== -->
-        <section class="contact" id="contact">
+        <section
+          class="contact"
+          id="contact"
+          aria-label="Información de contacto"
+        >
           <h2 class="contact__title">Contacto</h2>
-          <p class="contact__subtitle">
-            ¿Tienes algún proyecto en mente o quieres ponerte en contacto?
-            Envíame un mensaje:
-          </p>
 
-          <form class="contact__form" action="#" method="POST">
-            <div class="contact__field">
-              <label for="name" class="contact__label">Nombre</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="contact__input"
-                placeholder="Tu nombre completo"
-                required
+          <a href="mailto:student@tripleten.com" class="contact__email">
+            student@tripleten.com
+          </a>
+
+          <div class="contact__socials">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact__social-link"
+              aria-label="Perfil de LinkedIn"
+            >
+              <img
+                src="./images/icons/social-icons/negative-linkedIn.png"
+                alt="LinkedIn"
+                class="contact__social-icon"
               />
-            </div>
-
-            <div class="contact__field">
-              <label for="email" class="contact__label"
-                >Correo Electrónico</label
-              >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="contact__input"
-                placeholder="tu@email.com"
-                required
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact__social-link"
+              aria-label="Perfil de Facebook"
+            >
+              <img
+                src="./images/icons/social-icons/negative-facebook.png"
+                alt="Facebook"
+                class="contact__social-icon"
               />
-            </div>
-
-            <div class="contact__field">
-              <label for="message" class="contact__label">Mensaje</label>
-              <textarea
-                id="message"
-                name="message"
-                class="contact__textarea"
-                rows="5"
-                placeholder="Escribe tu mensaje aquí..."
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" class="contact__button">
-              Enviar Mensaje
-            </button>
-          </form>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact__social-link"
+              aria-label="Perfil de Instagram"
+            >
+              <img
+                src="./images/icons/social-icons/negative-instagram.png"
+                alt="Instagram"
+                class="contact__social-icon"
+              />
+            </a>
+            <a
+              href="https://x.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact__social-link"
+              aria-label="Perfil de X"
+            >
+              <img
+                src="./images/icons/social-icons/negative-X.png"
+                alt="X"
+                class="contact__social-icon"
+              />
+            </a>
+          </div>
         </section>
       </main>
 
@@ -297,69 +361,6 @@
         <p class="footer__text">
           &copy; 2026 Andres Fuentes. Todos los derechos reservados.
         </p>
-
-        <div class="footer__socials">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="footer__social-link"
-            aria-label="Perfil de Facebook"
-          >
-            <img
-              src="./images/icons/social-icons/negative-facebook.png"
-              alt=""
-              class="footer__social-icon"
-              width="24"
-              height="24"
-            />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="footer__social-link"
-            aria-label="Perfil de Instagram"
-          >
-            <img
-              src="./images/icons/social-icons/negative-instagram.png"
-              alt=""
-              class="footer__social-icon"
-              width="24"
-              height="24"
-            />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="footer__social-link"
-            aria-label="Perfil de LinkedIn"
-          >
-            <img
-              src="./images/icons/social-icons/negative-linkedIn.png"
-              alt=""
-              class="footer__social-icon"
-              width="24"
-              height="24"
-            />
-          </a>
-          <a
-            href="https://x.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="footer__social-link"
-            aria-label="Perfil de X"
-          >
-            <img
-              src="./images/icons/social-icons/negative-X.png"
-              alt=""
-              class="footer__social-icon"
-              width="24"
-              height="24"
-            />
-          </a>
-        </div>
       </footer>
     </div>
   </body>

@@ -3,6 +3,7 @@
   padding: 24px 0;
   background-color: transparent;
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   position: sticky;
   top: 0;
@@ -10,40 +11,34 @@
 }
 
 .header__container {
-  max-width: 1200px;
+  max-width: var(--container-max-width, 1440px);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: var(--container-padding-desktop, 0 80px);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-/* Enlace del Isologo */
+/* Logotipo */
 .header__logo {
   display: inline-flex;
   align-items: center;
+  font-family: var(--font-family-headings);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  letter-spacing: -0.5px;
   text-decoration: none;
   border-radius: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.header__logo:hover {
+  opacity: 0.8;
 }
 
 .header__logo:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 4px;
-}
-
-/* Logotipo / Monograma */
-.header__logo {
-  font-family: var(--font-family-headings);
-  font-size: 20px;
-  font-weight: var(--font-weight-bold, 700);
-  color: var(--color-text-main);
-  text-decoration: none;
-  letter-spacing: -0.5px;
-  transition: opacity 0.3s ease,;
-  
-}
-
-.header__logo:hover {
-  opacity: 0.8;
 }
 
 /* Barra de Navegación */
@@ -105,21 +100,35 @@
   border-radius: 2px;
 }
 
-/* ==================== RESPONSIVE (BREAKPOINTS) ==================== */
-@media (max-width: 767px) {
+/* ==================== RESPONSIVE ==================== */
+
+/* Tabletas (hasta 1023px) */
+@media (max-width: 1023px) {
   .header {
     padding: 20px 0;
   }
 
   .header__container {
-    flex-direction: column;
-    gap: 16px;
+    padding: var(--container-padding-tablet, 0 40px);
   }
 
   .header__menu {
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 24px;
+  }
+}
+
+/* Dispositivos Móviles (hasta 767px) */
+@media (max-width: 767px) {
+  .header {
+    padding: 16px 0;
+  }
+
+  .header__container {
+    padding: var(--container-padding-mobile, 0 20px);
+  }
+
+  .header__menu {
+    gap: 16px;
   }
 
   .header__link {
