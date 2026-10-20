@@ -14,9 +14,11 @@ html {
 }
 
 section {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 100px;
 }
-
+.content {
+  padding-top: 90px;
+}
 /* Estilos para navegadores WebKit (Chrome, Safari, Edge, Brave) */
 ::-webkit-scrollbar {
   width: 10px;

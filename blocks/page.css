@@ -1,10 +1,15 @@
 .page {
+  font-family: var(--font-family-body, "Open Sans", sans-serif);
   position: relative;
   min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   background-color: var(--color-bg-main);
-  overflow: hidden;
+  color: #ffffff;
+  overflow-x: hidden;
 }
 
 /* Base de los Degradados (Glow Effect) */
@@ -54,11 +59,15 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
+.main,
 .content {
-  flex: 1; /* Empuja el footer al fondo si hay poco contenido */
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding-bottom: 80px;
 }
 
 /* ==================== RESPONSIVE ==================== */
