@@ -16,7 +16,6 @@
   margin-bottom: 24px;
 }
 
-
 .contact__email {
   font-family: var(--font-family-body);
   font-size: 18px;
@@ -24,7 +23,9 @@
   color: var(--color-accent);
   text-decoration: none;
   margin-bottom: 40px;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   display: inline-block;
 }
 
@@ -39,14 +40,12 @@
   border-radius: 4px;
 }
 
-
 .contact__socials {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
-
 
 .contact__social-link {
   display: inline-flex;
@@ -61,7 +60,6 @@
   outline: none;
 }
 
-
 .contact__social-icon {
   width: 20px;
   height: 20px;
@@ -69,7 +67,6 @@
   filter: brightness(0) invert(0.7); /* Tono claro desactivado */
   transition: filter 0.3s ease;
 }
-
 
 .contact__social-link:hover,
 .contact__social-link:focus-visible {
@@ -81,9 +78,9 @@
 
 .contact__social-link:hover .contact__social-icon,
 .contact__social-link:focus-visible .contact__social-icon {
-  filter: brightness(0) invert(1); 
+  filter: brightness(0) invert(1);
 }
-}
+
 /* ==================== RESPONSIVE ==================== */
 
 /* Tablet (hasta 1023px) */
