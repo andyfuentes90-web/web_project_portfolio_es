@@ -101,6 +101,50 @@ section {
   font-display: swap;
 }
 
+/* Inter - Regular (400) */
+@font-face {
+  font-family: "Inter";
+  src:
+    url("./fonts/Inter-Regular.woff2") format("woff2"),
+    url("./fonts/Inter-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter - Medium (500) */
+@font-face {
+  font-family: "Inter";
+  src:
+    url("./fonts/Inter-Medium.woff2") format("woff2"),
+    url("./fonts/Inter-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter - Bold (700) */
+@font-face {
+  font-family: "Inter";
+  src:
+    url("./fonts/Inter-Bold.woff2") format("woff2"),
+    url("./fonts/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Noto Serif - Italic (400) */
+@font-face {
+  font-family: "Noto Serif";
+  src:
+    url("./fonts/NotoSerif-Italic.woff2") format("woff2"),
+    url("./fonts/NotoSerif-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* VARIABLES GLOBALES */
 :root {
   /* Paleta de Colores */
